@@ -87,4 +87,14 @@ int main () {
     show_score(secret_word, attempted_letters, attempts);
     try_a_letter(attempted_letters, &attempts);
   } while (!has_win(secret_word, attempted_letters, attempts) && !has_hanged(secret_word, attempted_letters, attempts));
+
+  if (has_win(secret_word, attempted_letters, attempts)) {
+    printf("\n*****\n");
+    printf("***** CONGRATULATIONS! YOU WON!\n");
+    printf("*****\n");
+  } else {
+    printf("\n*****\n");
+    printf("***** THE SECRET WORD WAS %s. TRY IT AGAIN!\n", secret_word);
+    printf("*****\n");
+  }
 }
